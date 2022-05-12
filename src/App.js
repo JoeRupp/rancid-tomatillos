@@ -7,8 +7,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      movieList: [
-      ]
+      movieList: movieData.movies
     }
   }
 
@@ -17,7 +16,7 @@ class App extends Component {
       <main>
         <Nav />
         <h1>Rancid Tomatillos</h1>
-        <MovieContainer movieList={this.state.movieList}/>
+        <MovieContainer movies={this.state.movieList}/>
       </main>
     )
   }
