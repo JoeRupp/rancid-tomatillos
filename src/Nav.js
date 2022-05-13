@@ -14,6 +14,7 @@ class Nav extends Component {
       <nav>
         <label></label>
         <input
+          className='searchBar'
           type='text'
           placeholder='search movies'
           name='search'
