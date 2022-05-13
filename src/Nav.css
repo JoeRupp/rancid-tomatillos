@@ -1,0 +1,8 @@
+nav {
+  grid-area: nav;
+  width: 90vw;
+  padding: 5%;
+  position: fixed;
+  display: flex;
+  justify-content: flex-end;
+}
