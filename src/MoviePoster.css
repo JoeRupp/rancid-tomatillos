@@ -1,0 +1,12 @@
+.poster { 
+  height: 30em;
+}
+
+.poster:hover { 
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+h3 {
+  font-size: 1.8em;
+}

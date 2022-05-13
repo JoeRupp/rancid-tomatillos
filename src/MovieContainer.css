@@ -1,0 +1,36 @@
+.movieContainer {
+  grid-area: main;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    'title title title'
+}
+
+h1 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 10em;
+  margin: 0;
+  margin-top: 20%;
+}
+
+h2 {
+  font-weight: lighter;
+  font-size: 3em;
+  margin-top: 3%;
+}
+
+.title {
+  grid-area: title;
+  width: 70%;
+  margin: 5%;
+}
+
+.moviePoster {
+  display: flex;
+  margin-bottom: 15%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
