@@ -2,6 +2,7 @@ import React from 'react';
 import './MovieDetails.css';
 
 const MovieDetails = ({currentMovie, displayHomeScreen}) => {
+
   return (
     <div className='movieDetails'>
       <img className='movieBackdrop' src= {currentMovie.backdrop_path}/>

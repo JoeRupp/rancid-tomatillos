@@ -24,7 +24,12 @@ class App extends Component {
 
 
   chooseMovie = (id) => {
-    this.setState({ currentMovie: movieDetails.movie })
+    fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
+    .then(response => response.json())
+    .then(data => this.setState({currentMovie: data.movie}))
+    .catch(err => console.log(err))
+  
+    // this.setState({ currentMovie: movieDetails.movie })
     window.scrollTo({
       top: 0,
       behavior: "smooth"
