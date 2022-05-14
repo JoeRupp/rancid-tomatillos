@@ -2,7 +2,7 @@ import React from 'react';
 import MoviePoster from './MoviePoster'
 import './MovieContainer.css'
 
-const MovieContainer = ({ movies }) => {
+const MovieContainer = ({ movies, chooseMovie }) => {
   const listOfMovies = movies.map(movie => {
     return (
       <MoviePoster
@@ -10,9 +10,10 @@ const MovieContainer = ({ movies }) => {
         posterPath={movie.poster_path}
         id={movie.id}
         key={movie.id}
+        chooseMovie={chooseMovie}
       />
     )
-  }) 
+  })
 
   return(
     <div className='movieContainer'>
