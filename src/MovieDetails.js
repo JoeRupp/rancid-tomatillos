@@ -1,12 +1,12 @@
 import React from 'react';
 import './MovieDetails.css';
 
-const MovieDetails = ({currentMovie}) => {
+const MovieDetails = ({currentMovie, displayHomeScreen}) => {
   return (
     <div className='movieDetails'>
       <img className='movieBackdrop' src= {currentMovie.backdrop_path}/>
       <div className='movieInfo'>
-        <button className='homeButton'>Back</button>
+        <button className='homeButton' onClick={() => displayHomeScreen()}>Back</button>
         <h1 className='movieTitle'>{currentMovie.title}</h1>
         <div className='movieDescription'>
           <p>{currentMovie.tagline}</p>

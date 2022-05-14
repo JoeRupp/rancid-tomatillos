@@ -23,12 +23,16 @@ class App extends Component {
     })
   }
 
+  displayHomeScreen = () => {
+    this.setState({ currentMovie: "" })
+  }
+
   render() {
     return (
       <main>
-        <Nav />
+        {!this.state.currentMovie && <Nav/>}
         {!this.state.currentMovie && <MovieContainer movies={this.state.movieList} chooseMovie={this.chooseMovie}/>}
-        {this.state.currentMovie && <MovieDetails currentMovie={this.state.currentMovie}/>}
+        {this.state.currentMovie && <MovieDetails currentMovie={this.state.currentMovie} displayHomeScreen={this.displayHomeScreen}/>}
       </main>
     )
   }
