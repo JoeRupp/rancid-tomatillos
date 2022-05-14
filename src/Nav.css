@@ -7,7 +7,7 @@ nav {
   justify-content: flex-end;
 }
 
-.searchBar {
+/* .searchBar {
   width: 15vw;
   border: 0;
   border-radius: 25px;
@@ -25,4 +25,4 @@ button {
 button:hover {
   color: black;
   background-color: white
-}
+} */

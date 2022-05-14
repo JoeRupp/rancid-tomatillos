@@ -1,4 +1,4 @@
-.movieContainer {
+ .movieContainer {
   grid-area: main;
   width: 100vw;
   display: grid;
