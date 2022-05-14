@@ -1,0 +1,52 @@
+.movieBackdrop {
+  width: 100vw;
+  margin: 0px;
+  margin: 0;
+  z-index: -1;
+  position: fixed;
+}
+
+.movieTitle {
+  margin-top: 0;
+}
+
+.movieInfo {
+  height: 90vh;
+  margin-left: 5%;
+  margin-right: 5%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 5%;
+  grid-template-areas:
+    'homeButton homeButton'
+    'movieTitle movieDescription'
+    'movieFacts movieFacts'
+    'video video'
+}
+
+.movieTitle {
+  grid-area: movieTitle;
+  height: 80vh;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+}
+
+.movieDescription {
+  grid-area: movieDescription;
+  height: 80vh;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+}
+
+.movieFacts {
+  grid-area: movieFacts;
+}
+
+.homeButton {
+  grid-area: homeButton;
+  width: 8vw;
+  margin-top: 5%;
+  /* z-index: 10; */
+}
