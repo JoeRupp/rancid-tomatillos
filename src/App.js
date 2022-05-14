@@ -2,10 +2,8 @@
 import React, { Component } from 'react';
 import Nav from './Nav'
 import MovieContainer from './MovieContainer'
-import movieData from './movieData'
 import MovieDetails from './MovieDetails'
 import './App.css';
-import movieDetails from './movieDetailData';
 class App extends Component {
   constructor() {
     super();
@@ -17,7 +15,13 @@ class App extends Component {
 
   componentDidMount = () => {
     fetch("https://rancid-tomatillos.herokuapp.com/api/v2/movies")
-      .then(response => response.json())
+      .then(response => {
+        if (!response.ok) {
+          throw Error()
+        } else {
+          return response.json()
+        }
+      })
       .then(data => this.setState({movieList: data.movies}))
       .catch(err => console.log(err))
   }
@@ -25,11 +29,15 @@ class App extends Component {
 
   chooseMovie = (id) => {
     fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
-    .then(response => response.json())
-    .then(data => this.setState({currentMovie: data.movie}))
-    .catch(err => console.log(err))
-  
-    // this.setState({ currentMovie: movieDetails.movie })
+      .then(response => {
+        if (!response.ok) {
+          throw Error()
+        } else {
+          return response.json()
+        }
+      })
+      .then(data => this.setState({currentMovie: data.movie}))
+      .catch(err => this.setState({currentMovie: "error"}))
     window.scrollTo({
       top: 0,
       behavior: "smooth"
