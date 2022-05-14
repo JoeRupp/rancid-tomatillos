@@ -3,6 +3,7 @@ import Nav from './Nav'
 import MovieContainer from './MovieContainer'
 import './App.css';
 import movieData from './movieData';
+import movieDetails from './movieDetailData';
 class App extends Component {
   constructor() {
     super();
