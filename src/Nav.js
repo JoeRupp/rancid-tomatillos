@@ -5,8 +5,9 @@ class Nav extends Component {
   constructor() {
     super();
     this.state = {
-      userInput: ''
+      userInput: '',
     }
+
   }
 
   render = () => {

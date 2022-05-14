@@ -6,7 +6,6 @@ import MovieDetails from './MovieDetails'
 import './App.css';
 import movieData from './movieData';
 import movieDetails from './movieDetailData';
-console.log(movieDetails.movie)
 class App extends Component {
   constructor() {
     super();
@@ -17,8 +16,11 @@ class App extends Component {
   }
 
   chooseMovie = (id) => {
-    console.log(id)
     this.setState({ currentMovie: movieDetails.movie })
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    })
   }
 
   render() {
