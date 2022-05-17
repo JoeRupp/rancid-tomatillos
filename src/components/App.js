@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import Nav from './Nav'
 import MovieContainer from './MovieContainer'
 import MovieDetails from './MovieDetails'
-import './App.css';
+import '../styling/App.css';
 class App extends Component {
   constructor() {
     super();

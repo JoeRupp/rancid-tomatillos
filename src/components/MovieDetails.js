@@ -1,5 +1,5 @@
 import React from 'react';
-import './MovieDetails.css';
+import '../styling/MovieDetails.css';
 
 const MovieDetails = ({currentMovie, displayHomeScreen}) => {
   console.log(currentMovie)
