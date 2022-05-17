@@ -1,6 +1,6 @@
 import React from 'react';
 import MoviePoster from './MoviePoster'
-import './MovieContainer.css'
+import '../styling/MovieContainer.css'
 
 const MovieContainer = ({ movies, chooseMovie }) => {
   const listOfMovies = movies.map(movie => {

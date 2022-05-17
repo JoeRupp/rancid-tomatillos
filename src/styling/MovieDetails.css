@@ -26,6 +26,7 @@
 
 .movieTitle {
   grid-area: movieTitle;
+  font-size: 5em;
   height: 80vh;
   display: flex;
   justify-content: flex-end;
