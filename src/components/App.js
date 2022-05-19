@@ -30,7 +30,7 @@ class App extends Component {
   render() {
     return (
       <main>
-        {!this.state.currentMovie && <Nav/>}
+        <Route exact path='/' render={() => <Nav/> }/>
         <Route exact path='/' render={() => <MovieContainer movies={this.state.movieList} />} />
         <Route exact path='/:id' render={({ match }) => <MovieDetails currentMovie={match.params.id}/>}/>
       </main>
