@@ -11,7 +11,6 @@ class App extends Component {
     super();
     this.state = {
       movieList: [],
-      currentMovie: ""
     }
   }
 
@@ -28,62 +27,16 @@ class App extends Component {
       .catch(err => console.log(err))
   }
 
-
-  chooseMovie = (id) => {
-    fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
-      .then(response => {
-        if (!response.ok) {
-          throw Error()
-        } else {
-          return response.json()
-        }
-      })
-      .then(data => data.movie)
-      .then(movie => this.setState({ currentMovie: movie }))
-      // .then(() => console.log("booger"))
-      .catch(err => this.setState({ currentMovie: "error" }))
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    })
-  }
-
-  // displayHomeScreen = () => {
-  //   this.setState({ currentMovie: "" })
-  // }
-
   render() {
     return (
       <main>
         {!this.state.currentMovie && <Nav/>}
-        <Switch>
-          <Route exact path='/' render={() => <MovieContainer movies={this.state.movieList} />} />
-          <Route exact path='/:id' render={({ match }) => {
-            this.chooseMovie(parseInt(match.params.id)) 
-            console.log("earwax!")
-            return <MovieDetails currentMovie={this.state.currentMovie}/>
-            }} />
-        </Switch>
+        <Route exact path='/' render={() => <MovieContainer movies={this.state.movieList} />} />
+        <Route exact path='/:id' render={({ match }) => <MovieDetails currentMovie={match.params.id}/>}/>
       </main>
     )
   }
 }
 
-
-
-//return <MovieDetails currentMovie={this.state.currentMovie} displayHomeScreen={this.displayHomeScreen}/>
-
-// this.chooseMovie(match.params.id)
-
-
-// {!this.state.currentMovie && <MovieContainer movies={this.state.movieList} chooseMovie={this.chooseMovie}/>}
-// {this.state.currentMovie && <MovieDetails currentMovie={this.state.currentMovie} displayHomeScreen={this.displayHomeScreen}/>}
-
-//         <Route exact path='/:id' render={() => <MovieDetails currentMovie={this.state.currentMovie} displayHomeScreen={this.displayHomeScreen}/>} />
-
 export default App;
 
-// async function renderMovieDetails() {
-//   const movieDetails = await <MovieDetails currentMovie={this.state.currentMovie} displayHomeScreen={this.displayHomeScreen}/>
-//   return movieDetails
-// }
