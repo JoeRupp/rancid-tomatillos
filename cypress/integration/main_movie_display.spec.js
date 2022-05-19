@@ -21,7 +21,7 @@ describe('Rancid Tomatillos main movie display', () => {
     cy.contains('Uh oh! Something went wrong. We are unable to load any movies at this time. Womp womp.').should('not.exist')
   });
 
-  it.skip('should direct to another page when a movie poster is clicked', () => {
+  it('should direct to another page when a movie poster is clicked', () => {
     cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/694919', { fixture: './movieDetails.json' })
       .get('.moviePoster')
       .first()
@@ -45,6 +45,5 @@ describe('Rancid Tomatillos main movie display', () => {
     cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', { statusCode: 500, fixture: './movieData.json' })
       .visit('http://localhost:3000/')
       .contains('Uh oh! Something went wrong. We are unable to load any movies at this time. Womp womp.')
-      // .should('exist')
   });
 })

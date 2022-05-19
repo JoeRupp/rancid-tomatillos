@@ -4,12 +4,13 @@ import Nav from './Nav'
 import MovieContainer from './MovieContainer'
 import MovieDetails from './MovieDetails'
 import '../styling/App.css';
+import { Route, NavLink, Switch } from 'react-router-dom';
+
 class App extends Component {
   constructor() {
     super();
     this.state = {
       movieList: [],
-      currentMovie: ""
     }
   }
 
@@ -26,37 +27,16 @@ class App extends Component {
       .catch(err => console.log(err))
   }
 
-
-  chooseMovie = (id) => {
-    fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
-      .then(response => {
-        if (!response.ok) {
-          throw Error()
-        } else {
-          return response.json()
-        }
-      })
-      .then(data => this.setState({currentMovie: data.movie}))
-      .catch(err => this.setState({currentMovie: "error"}))
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    })
-  }
-
-  displayHomeScreen = () => {
-    this.setState({ currentMovie: "" })
-  }
-
   render() {
     return (
       <main>
-        {!this.state.currentMovie && <Nav/>}
-        {!this.state.currentMovie && <MovieContainer movies={this.state.movieList} chooseMovie={this.chooseMovie}/>}
-        {this.state.currentMovie && <MovieDetails currentMovie={this.state.currentMovie} displayHomeScreen={this.displayHomeScreen}/>}
+        <Route exact path='/' render={() => <Nav/> }/>
+        <Route exact path='/' render={() => <MovieContainer movies={this.state.movieList} />} />
+        <Route exact path='/:id' render={({ match }) => <MovieDetails currentMovie={match.params.id}/>}/>
       </main>
     )
   }
 }
 
 export default App;
+

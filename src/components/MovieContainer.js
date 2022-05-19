@@ -1,17 +1,17 @@
 import React from 'react';
 import MoviePoster from './MoviePoster'
 import '../styling/MovieContainer.css'
+import { Link } from 'react-router-dom';
 
-const MovieContainer = ({ movies, chooseMovie }) => {
+const MovieContainer = ({ movies }) => {
   const listOfMovies = movies.map(movie => {
     return (
-      <MoviePoster
-        title={movie.title}
-        posterPath={movie.poster_path}
-        id={movie.id}
-        key={movie.id}
-        chooseMovie={chooseMovie}
-      />
+        <MoviePoster
+          title={movie.title}
+          posterPath={movie.poster_path}
+          id={movie.id}
+          key={movie.id}
+        />
     )
   })
 
