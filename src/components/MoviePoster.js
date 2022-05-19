@@ -5,12 +5,14 @@ import { Link } from 'react-router-dom';
 const MoviePoster = ({ title, posterPath, id}) => {
 
   return(
-    <Link to={`/${id}`} key={id}>
-    <div className='moviePoster'>
-      <img className='poster' src={posterPath} alt={`Movie poster for ${title}`} />
+
+    <div className='moviePoster' key={id}>
+      <Link to={`/${id}`}>
+       <img className='poster' src={posterPath} alt={`Movie poster for ${title}`} />
+      </Link>
       <h3>{title}</h3>
     </div>
-    </Link>
+    
   )
 }
 
