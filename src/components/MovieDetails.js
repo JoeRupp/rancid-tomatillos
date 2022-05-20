@@ -40,10 +40,6 @@ class MovieDetails extends Component {
       .then(data => data.movie)
       .then(movie => this.setState({currentMovie: movie}))
       .catch(err => console.log(err))
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    })
   }
 
   chooseVideo = (video) => {
@@ -78,6 +74,7 @@ class MovieDetails extends Component {
                 frameBorder="0"
                 width="100%"
                 height="100%"
+                allowFullScreen
                 >
               </iframe>
             </div>
@@ -91,3 +88,5 @@ class MovieDetails extends Component {
 }
 
 export default MovieDetails;
+
+//className={video.id === this.state.currentVideo.id ? 'active' : 'no'}

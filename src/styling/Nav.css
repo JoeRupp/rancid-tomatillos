@@ -16,13 +16,16 @@ nav {
 }
 
 button {
-  background-color: transparent;
   border: 1px solid white;
   border-radius: 25px;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   cursor: pointer;
 }
 
 button:hover {
   color: black;
-  background-color: white
+  background-color: white;
+  box-shadow: rgba(194, 55, 104, 0.5) 0px 4px 16px, rgba(194, 55, 104, 0.5) 0px 8px 24px, rgba(194, 55, 104, 0.5) 0px 16px 56px;
 }
