@@ -5,6 +5,7 @@
 .poster:hover { 
   cursor: pointer;
   transform: scale(1.05);
+  box-shadow: rgba(194, 55, 104, 0.8) 0px 4px 16px, rgba(194, 55, 104, 0.8) 0px 8px 24px, rgba(194, 55, 104, 0.8) 0px 16px 56px;
 }
 
 h3 {
