@@ -10,10 +10,25 @@ class MovieDetails extends Component {
     this.state = {
       id: props.currentMovie,
       currentMovie: '',
+      videos: [],
+      currentVideo: ''
     }
   }
 
   componentDidMount = () => {
+    fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${this.state.id}/videos`)
+      .then(response => {
+        if (!response.ok) {
+          throw Error()
+        } else {
+          return response.json()
+        }
+      })
+      .then(data => data.videos)
+      .then(videos => this.setState({videos: videos}))
+      .then(() => this.setState({currentVideo: this.state.videos[0]}))
+      .catch(err => console.log(err))
+
     fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${this.state.id}`)
       .then(response => {
         if (!response.ok) {
@@ -31,7 +46,11 @@ class MovieDetails extends Component {
     })
   }
 
-render = () => {
+  chooseVideo = (video) => {
+    this.setState({currentVideo: video})
+  }
+
+  render = () => {
     if (!this.state.currentMovie) {
       return (<h3>Uh oh! Something went wrong. We are unable to load any movies details at this time. Womp womp.</h3>)
     } else {
@@ -54,7 +73,7 @@ render = () => {
             </div>
             <div className='video'>
               <iframe
-                src={`https://www.youtube.com/embed/1UXZEGYSwgg`}
+                src={this.state.currentVideo && `https://www.youtube.com/embed/${this.state.currentVideo.key}`}
                 title="YouTube Video"
                 frameBorder="0"
                 width="100%"
@@ -63,7 +82,7 @@ render = () => {
               </iframe>
             </div>
             <div className='videoOptions'>
-
+              {this.state.videos.map((video) => <button key={`${video.id}`} onClick={() => this.chooseVideo(video)}>{`${video.type}`}</button>)}
             </div>
         </div>
       </div> )
