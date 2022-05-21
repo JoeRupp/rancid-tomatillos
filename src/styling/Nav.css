@@ -1,4 +1,4 @@
-nav {
+form {
   grid-area: nav;
   width: 90vw;
   padding: 5%;
@@ -13,6 +13,8 @@ nav {
   border-radius: 25px;
   cursor: pointer;
   margin-right: 2%;
+  color: black;
+  cursor: text;
 }
 
 button {

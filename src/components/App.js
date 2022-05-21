@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react';
 import Nav from './Nav'
 import MovieContainer from './MovieContainer'
@@ -11,6 +10,7 @@ class App extends Component {
     super();
     this.state = {
       movieList: [],
+      filteredList: []
     }
   }
 
@@ -27,12 +27,18 @@ class App extends Component {
       .catch(err => console.log(err))
   }
 
+  searchMovies = (search) => {
+    const filtered = this.state.movieList.filter(movie => movie.title.includes(search.userInput))
+    this.setState({ filteredList: filtered })
+
+  }
+
   render() {
     return (
       <main>
-        <Route exact path='/' render={() => <Nav/> }/>
-        <Route exact path='/' render={() => <MovieContainer movies={this.state.movieList} />} />
-        <Route exact path='/:id' render={({ match }) => <MovieDetails currentMovie={match.params.id}/>}/>
+        <Route exact path='/' render={() => <Nav searchMovies={this.searchMovies}/> }/>
+        <Route exact path='/' render={() => <MovieContainer movies={this.state.filteredList.length > 0 ? this.state.filteredList : this.state.movieList} />} />
+        <Route exact path='/:id' render={({ match }) => <MovieDetails currentMovie={match.params.id} searchMovies={this.searchMovies} />}/>
       </main>
     )
   }
