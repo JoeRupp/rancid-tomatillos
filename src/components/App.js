@@ -28,9 +28,15 @@ class App extends Component {
   }
 
   searchMovies = (search) => {
-    const filtered = this.state.movieList.filter(movie => movie.title.includes(search.userInput))
-    this.setState({ filteredList: filtered })
 
+    // const input = search.userInput
+    //     .toLowerCase()
+    //     .split(" ")
+    //     .map((word) => word.replace(word[0], word[0].toUpperCase()))
+    //     .join(" ");
+  
+    const filtered = this.state.movieList.filter(movie => movie.title.includes(search))
+    this.setState({ filteredList: filtered })
   }
 
   render() {
