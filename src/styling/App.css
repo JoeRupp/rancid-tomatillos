@@ -1,1 +1,39 @@
+body {
+  background-image: url(../assets/alex-litvin-MAYsdoYpGuk-unsplash.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  margin: 0px;
+  width: 100vw;
+  display: grid;
+  grid-template-rows: 2fr 8fr;
+  grid-template-areas:
+    "nav"
+    "main";
+}
 
+* {
+  color: white;
+  font-family: "Poppins", sans-serif;
+}
+
+.searchError {
+  color: white;
+  padding-top: 2%;
+  padding-left: 5%;
+  position: fixed;
+  text-shadow: rgba(194, 55, 104, 0.5) 0px 4px 16px,
+    rgba(194, 55, 104, 0.5) 0px 8px 24px, rgba(194, 55, 104, 0.5) 0px 16px 56px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.error {
+  grid-area: error;
+  color: white;
+  text-shadow: rgba(194, 55, 104, 0.5) 0px 4px 16px,
+    rgba(194, 55, 104, 0.5) 0px 8px 24px, rgba(194, 55, 104, 0.5) 0px 16px 56px;
+  display: flex;
+  justify-content: center;
+}
