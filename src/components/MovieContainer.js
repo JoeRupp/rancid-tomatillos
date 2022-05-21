@@ -1,7 +1,6 @@
 import React from 'react';
-import MoviePoster from './MoviePoster'
-import '../styling/MovieContainer.css'
-import { Link } from 'react-router-dom';
+import MoviePoster from './MoviePoster';
+import '../styling/MovieContainer.css';
 
 const MovieContainer = ({ movies }) => {
   const listOfMovies = movies.map(movie => {
@@ -13,7 +12,7 @@ const MovieContainer = ({ movies }) => {
           key={movie.id}
         />
     )
-  })
+  });
 
   return(
     <div className='movieContainer'>
@@ -24,8 +23,7 @@ const MovieContainer = ({ movies }) => {
       {listOfMovies}
       {!movies.length && <h3 className="error">Uh oh! Something went wrong. We are unable to load any movies at this time. Womp womp.</h3>}
     </div>
-  )
-}
-
+  );
+};
 
 export default MovieContainer;

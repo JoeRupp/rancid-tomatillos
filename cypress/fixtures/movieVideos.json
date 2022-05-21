@@ -1,24 +1,25 @@
 {
-    "videos": [
+  "videos": [
     {
-        "id": 242,
-        "movie_id": 694919,
-        "key": "01ON04GCwKs",
-        "site": "YouTube",
-        "type": "Teaser"
+      "id": 242,
+      "movie_id": 694919,
+      "key": "01ON04GCwKs",
+      "site": "YouTube",
+      "type": "Teaser"
     },
     {
-        "id": 243,
-        "movie_id": 694919,
-        "key": "KK8FHdFluOQ",
-        "site": "YouTube",
-        "type": "Trailer"
+      "id": 243,
+      "movie_id": 694919,
+      "key": "KK8FHdFluOQ",
+      "site": "YouTube",
+      "type": "Trailer"
     },
     {
-        "id": 246,
-        "movie_id": 694919,
-        "key": "1UXZEGYSwgg",
-        "site": "YouTube",
-        "type": "Featurette"
-    }]
+      "id": 246,
+      "movie_id": 694919,
+      "key": "1UXZEGYSwgg",
+      "site": "YouTube",
+      "type": "Featurette"
     }
+  ]
+}
