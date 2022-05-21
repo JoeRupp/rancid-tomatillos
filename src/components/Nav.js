@@ -7,22 +7,43 @@ class Nav extends Component {
     this.state = {
       userInput: '',
     }
+  }
+  
+  handleChange = (event) => {
+    this.setState({userInput: event.target.value})
+  }
 
+  submitSearch = (event) => {
+    event.preventDefault();
+    const newSearch = this.state.userInput
+      .toLowerCase()
+      .split(" ")
+      .map((word) => word.replace(word[0], word[0].toUpperCase()))
+      .join(" ");
+    console.log("newSearch", newSearch)
+    this.props.searchMovies(newSearch);
+  }
+
+  clearSearch = (event) => {
+    event.preventDefault();
+    this.setState({userInput: ''})
+    this.props.searchMovies('');
   }
 
   render = () => {
     return (
-      <nav>
-        <label></label>
+      <form>
         <input
           className='searchBar'
           type='text'
-          placeholder='search movies'
+          placeholder='search movie titles'
           name='search'
-          value={this.state.title}
+          value={this.state.userInput}
+          onChange={event => this.handleChange(event)}
         />
-        <button>Search</button>
-      </nav>
+        <button onClick={event => this.submitSearch(event)} >Search</button>
+        {this.state.userInput && <button onClick={event => this.clearSearch(event)}>Clear Search</button>}
+      </form>
     )
   }
 }

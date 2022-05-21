@@ -11,7 +11,7 @@ class MovieDetails extends Component {
       id: props.currentMovie,
       currentMovie: '',
       videos: [],
-      currentVideo: ''
+      currentVideo: {}
     }
   }
 
@@ -53,7 +53,7 @@ class MovieDetails extends Component {
       return (<div className='movieDetails'>
         <img className='movieBackdrop' src= {this.state.currentMovie.backdrop_path}/>
         <div className='movieInfo'>
-          <Link to={`/`}><button className='homeButton'>Back</button></Link>
+          <Link to={`/`} onClick={() => this.props.searchMovies('')}><button className='homeButton'>Back</button></Link>
             <h1 className='movieTitle'>{this.state.currentMovie.title}</h1>
             <div className='movieDescription'>
               {this.state.currentMovie.tagline && <p className='movieTagline'>{this.state.currentMovie.tagline.toUpperCase()}</p>}
