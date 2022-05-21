@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 import '../styling/MovieDetails.css';
 import dayjs from 'dayjs';
+import getFetch from '../apiCalls';
 
 
 class MovieDetails extends Component {
@@ -16,30 +17,15 @@ class MovieDetails extends Component {
   }
 
   componentDidMount = () => {
-    fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${this.state.id}/videos`)
-      .then(response => {
-        if (!response.ok) {
-          throw Error()
-        } else {
-          return response.json()
-        }
-      })
-      .then(data => data.videos)
-      .then(videos => this.setState({videos: videos}))
-      .then(() => this.setState({currentVideo: this.state.videos[0]}))
-      .catch(err => console.log(err))
 
-    fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${this.state.id}`)
-      .then(response => {
-        if (!response.ok) {
-          throw Error()
-        } else {
-          return response.json()
-        }
-      })
-      .then(data => data.movie)
-      .then(movie => this.setState({currentMovie: movie}))
-      .catch(err => console.log(err))
+    getFetch(`movies/${this.state.id}`)
+    .then(data => data.movie)
+    .then(movie => this.setState({currentMovie: movie}))
+
+    getFetch(`movies/${this.state.id}/videos`)
+    .then(data => data.videos)
+    .then(videos => this.setState({videos: videos}))
+    .then(() => this.setState({currentVideo: this.state.videos[0]}))
   }
 
   chooseVideo = (video) => {

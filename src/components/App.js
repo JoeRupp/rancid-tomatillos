@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import getFetch from '../apiCalls'
 import Nav from './Nav'
 import MovieContainer from './MovieContainer'
 import MovieDetails from './MovieDetails'
@@ -15,26 +16,11 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-    fetch("https://rancid-tomatillos.herokuapp.com/api/v2/movies")
-      .then(response => {
-        if (!response.ok) {
-          throw Error()
-        } else {
-          return response.json()
-        }
-      })
-      .then(data => this.setState({movieList: data.movies}))
-      .catch(err => console.log(err))
+    getFetch("movies")
+    .then(data => this.setState({movieList: data.movies}))
   }
 
   searchMovies = (search) => {
-
-    // const input = search.userInput
-    //     .toLowerCase()
-    //     .split(" ")
-    //     .map((word) => word.replace(word[0], word[0].toUpperCase()))
-    //     .join(" ");
-  
     const filtered = this.state.movieList.filter(movie => movie.title.includes(search))
     this.setState({ filteredList: filtered })
   }
