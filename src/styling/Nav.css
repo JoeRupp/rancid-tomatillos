@@ -20,6 +20,7 @@ form {
 button {
   border: 1px solid white;
   border-radius: 25px;
+  margin-right: 2%;
   color: black;
   background-color: rgba(255, 255, 255, 0.5);
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;

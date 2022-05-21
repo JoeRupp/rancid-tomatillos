@@ -48,7 +48,7 @@ class MovieDetails extends Component {
             <div className='movieFacts'>
               {this.state.currentMovie.average_rating && <p>{`Rating: ${this.state.currentMovie.average_rating.toFixed(2)}/10`} </p>}
               {this.state.currentMovie.genres && <p>{`Genres: ${this.state.currentMovie.genres.join(', ')}`} </p> }
-              {this.state.currentMovie.runtime && <p>{`Time: ${this.state.currentMovie.runtime} mins`} </p> }
+              {this.state.currentMovie.runtime > 0 && <p>{`Time: ${this.state.currentMovie.runtime} mins`} </p> }
               {this.state.currentMovie.release_date && <p>{`Release Date: ${dayjs(this.state.currentMovie.release_date).format('MM/DD/YYYY')}`} </p> }
               {this.state.currentMovie.budget > 0 && <p>{`Budget: $${this.state.currentMovie.budget.toLocaleString()}`} </p> }
               {this.state.currentMovie.revenue > 0 && <p>{`Revenue: $${this.state.currentMovie.revenue.toLocaleString()}`} </p> }
