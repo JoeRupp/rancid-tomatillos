@@ -11,7 +11,8 @@ class App extends Component {
     super();
     this.state = {
       movieList: [],
-      filteredList: []
+      filteredList: [],
+      searchError: false
     }
   }
 
@@ -22,13 +23,19 @@ class App extends Component {
 
   searchMovies = (search) => {
     const filtered = this.state.movieList.filter(movie => movie.title.includes(search))
-    this.setState({ filteredList: filtered })
+    if (!filtered.length && search) {
+      this.setState({searchError: true})
+    } else {
+      this.setState({searchError: false})
+      this.setState({ filteredList: filtered })
+    }
   }
 
   render() {
     return (
       <main>
         <Route exact path='/' render={() => <Nav searchMovies={this.searchMovies}/> }/>
+        {this.state.searchError && <h3 className="searchError">Sorry, no movies match your search!</h3>}
         <Route exact path='/' render={() => <MovieContainer movies={this.state.filteredList.length > 0 ? this.state.filteredList : this.state.movieList} />} />
         <Route exact path='/:id' render={({ match }) => <MovieDetails currentMovie={match.params.id} searchMovies={this.searchMovies} />}/>
       </main>

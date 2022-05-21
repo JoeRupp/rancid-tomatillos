@@ -20,7 +20,6 @@ class Nav extends Component {
       .split(" ")
       .map((word) => word.replace(word[0], word[0].toUpperCase()))
       .join(" ");
-    console.log("newSearch", newSearch)
     this.props.searchMovies(newSearch);
   }
 

@@ -22,7 +22,7 @@ const MovieContainer = ({ movies }) => {
           <h2>THE SECOND BEST IN MOVIE ENTERTAINMENT</h2>
         </div>
       {listOfMovies}
-      {!movies.length && <h2>Uh oh! Something went wrong. We are unable to load any movies at this time. Womp womp.</h2>}
+      {!movies.length && <h3 className="error">Uh oh! Something went wrong. We are unable to load any movies at this time. Womp womp.</h3>}
     </div>
   )
 }

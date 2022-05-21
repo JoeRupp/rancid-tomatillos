@@ -34,7 +34,7 @@ class MovieDetails extends Component {
 
   render = () => {
     if (!this.state.currentMovie) {
-      return (<h3>Uh oh! Something went wrong. We are unable to load any movies details at this time. Womp womp.</h3>)
+      return (<h3 className="error">Uh oh! Something went wrong. We are unable to load any movies details at this time. Womp womp.</h3>)
     } else {
       return (<div className='movieDetails'>
         <img className='movieBackdrop' src= {this.state.currentMovie.backdrop_path}/>
@@ -74,5 +74,3 @@ class MovieDetails extends Component {
 }
 
 export default MovieDetails;
-
-//className={video.id === this.state.currentVideo.id ? 'active' : 'no'}
