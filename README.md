@@ -9,11 +9,18 @@ Upon loading the application, the user will see a display of all movie titles an
 
 [Original project spec can be found here](https://frontend.turing.edu/projects/module-3/rancid-tomatillos-v3.html)
 ## Application in Action:
-Scroll through movies and select an option by cliking the movie poster
+
+Scroll through movies and select an option by clicking the movie poster
+
+![rancid_homepage_giphy](https://user-images.githubusercontent.com/95309774/169901951-2b4511cd-6380-4d2a-95a5-ccfd71fe79ca.gif)
 
 View of movie details and toggle between videos
 
+![rancid_moviedetails_giphy](https://user-images.githubusercontent.com/95309774/169902047-d3e56ecd-631f-42a4-b4dd-48c75e0cdf94.gif)
+
 Search functionality
+
+![rancid_search_giphy](https://user-images.githubusercontent.com/95309774/169902066-9f86d6e9-406a-4115-bd3d-22c7ff553fa5.gif)
 
 ## Set Up:
 - Clone the repository to your local machine.
