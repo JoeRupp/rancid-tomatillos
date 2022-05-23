@@ -5,9 +5,11 @@ Rancid Tomatillos is the second best movie application that offers movie details
 
 Upon loading the application, the user will see a display of all movie titles and posters. Clicking on a movie will bring the user to a page with specific movie information, including select videos for that movie (trailers, clips, features, etc).
 
-[Check out the deployed site here](http://JoeRupp.github.io/rancid-tomatillos)
+[Check out the deployed site here](https://turing-rancid-tomatillos.herokuapp.com/)
 
 [Original project spec can be found here](https://frontend.turing.edu/projects/module-3/rancid-tomatillos-v3.html)
+
+[Project planning documents can be found here](https://xd.adobe.com/view/38545f03-f520-43a8-b642-b647531c05ce-6d07/?fullscreen)
 ## Application in Action:
 
 Scroll through movies and select an option by clicking the movie poster
@@ -55,3 +57,4 @@ Search functionality
 ## Contributors:
 - [Nikki Balmoori](https://github.com/NBalmoori)
 - [Joe Rupp](https://github.com/JoeRupp)
+- [Kayla Gordon](https://github.com/kaylagordon) - project manager
