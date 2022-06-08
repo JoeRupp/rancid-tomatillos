@@ -1,7 +1,7 @@
 # Rancid Tomatillos 🎬
 
 ## Overview:
-Rancid Tomatillos is the second best movie application that offers movie details, trailers, ratings, and more. This application was a paired project from the Mod 2 curriculum at Turing School of Software & Design that was completed over the duration of two weeks. 
+Rancid Tomatillos is the second best movie application that offers movie details, trailers, ratings, and more. This application was a paired project from the Mod 3 curriculum at Turing School of Software & Design that was completed over the duration of two weeks. 
 
 Upon loading the application, the user will see a display of all movie titles and posters. Clicking on a movie will bring the user to a page with specific movie information, including select videos for that movie (trailers, clips, features, etc).
 
