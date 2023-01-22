@@ -7,8 +7,6 @@ Upon loading the application, the user will see a display of all movie titles an
 
 ---
 
-[Deployed app](https://turing-rancid-tomatillos.herokuapp.com/)
-
 [Original project spec](https://frontend.turing.edu/projects/module-3/rancid-tomatillos-v3.html)
 
 [Project planning documents](https://xd.adobe.com/view/38545f03-f520-43a8-b642-b647531c05ce-6d07/?fullscreen)
